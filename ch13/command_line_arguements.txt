@@ -1,0 +1,2 @@
+Use 'ls' in terminal to see what happens
+Rest of the info about argv and argc is in the book, pg 302-304

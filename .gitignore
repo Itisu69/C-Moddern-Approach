@@ -1,0 +1,19 @@
+# 1. Ignore CLion build artifacts and IDE configurations completely
+cmake-build-debug/
+cmake-build-release/
+.idea/
+
+# 2. Ignore extensionless compiled Linux binary executables
+*
+!*/
+
+# 3. Whitelist files with extensions BUT ignore everything inside .idea
+!*.*
+.idea/**/*
+
+# 4. Explicitly ensure your real project files are kept
+!*.c
+!*.h
+!*.txt
+!*.md
+!.gitignore
