@@ -26,3 +26,37 @@
     }
 
     After preprocessing:
+
+    -> Inside f()
+        first the function f() will be executed.
+        Because N is already defined the printf of #if will disappear, and condition of #else will not
+        #endif will also disappear
+
+        thus, f() will look like this after preprocessing:
+        void f(void){
+            printf("N is undefined\n");
+        }
+
+    -> Inside main()
+        f() will be called
+        As N is defined, #ifdef N will disappear
+        #undef N will remove defined macro so this line will also disappear
+        #endif has no effect and it will disappear too
+
+    -> This is how the code will look after preprocessing
+
+        void f(void);
+
+            int main(void)
+            {
+                f();
+                return 0;
+            }
+
+            void f(void)
+            {
+                printf("N is undefined\n");
+            }
+
+(B) What will be the output of this program?
+    Ans : It will print: N is undefined
