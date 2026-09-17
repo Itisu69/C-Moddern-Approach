@@ -14,4 +14,3 @@ int main(void)
 
     printf("Volume of the sphere is %.2fmeter cube\n", volume);
 }
-

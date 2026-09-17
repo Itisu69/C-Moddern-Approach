@@ -59,6 +59,7 @@ int main()
     while (true)
     {
         printf("Enter an RPN expression: ");
+        make_empty();
 
         while ((ch = getchar()) != EOF && ch != '\n')
         {
