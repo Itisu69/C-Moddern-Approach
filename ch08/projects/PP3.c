@@ -4,16 +4,23 @@
 
 int main()
 {
-    int indx_digit[10] = {0};
-    long n;
+    long n = 1;
     int digit, occur = 0;
 
-    printf("Enter a digit (Or digits): ");
-    while (1)
-    {
+    printf("This program prints the occurances of the numbers entered by user"
+            " until they enter number less than 0\n");
+
+    while (1) {
+
+        int indx_digit[10] = {0};
+        printf("\nEnter a number (0 or less to stop): ");
         scanf("%ld", &n);
 
-        printf("\nDigit:\t   0 1 2 3 4 5 6 7 8 9 ");
+        if (n <= 0) {
+            break;
+        }
+
+        printf("Digit:\t   0 1 2 3 4 5 6 7 8 9 ");
         printf("\nOccurance:");
 
         while (n > 0)
@@ -23,10 +30,16 @@ int main()
             n /= 10;
         }
 
-        for (n = 0; n < 10; n++)
+        for (int i = 0; i < 10; i++)
         {
-            printf(" %d", indx_digit[n]);
+            printf(" %d", indx_digit[i]);
         }
+
+        printf("\n");
+
+        long n = 1;
+        int digit, occur = 0;
+
     }
 
     return 0;
