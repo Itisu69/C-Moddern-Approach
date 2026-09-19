@@ -1,20 +1,33 @@
+// Writing a program that evaluates an expression
+// 
+// Enter an expression: 1+2.5+3
+// Value of expression: 10.5
+//
+// Operands are float
+// Operators are evaluated from left to right (There is no precedence between them)
+
 #include <stdio.h>
 
 int main() {
-    int letters=0,words=0;
-    char c;
-    printf("Enter a sentence: ");
-    
+    float result, operand;
+    char operator;
 
-    while ((c=getchar())  !='\n') {
-       if (c == ' ') {
-           words++;
-       } else {
-        letters++;
-       }
+    printf("Enter an expression: ");
+    scanf("%f", &result);
+
+    while((operator = getchar()) != '\n'){
+
+        scanf("%f", &operand);
+
+        switch(operator) {
+            case '+' : result += operand; break;
+            case '-' : result -= operand; break;
+            case '*' : result *= operand; break;
+            case '/' : result /= operand; break;
+        }
     }
-    words++;
 
-    printf("Average words length: %.2f",(float) letters/words);
+    printf("Value of Expression: %.2f", result);
+
     return 0;
 }
