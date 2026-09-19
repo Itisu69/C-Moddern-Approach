@@ -1,16 +1,18 @@
 #include <stdio.h>
-
+#include <math.h>
 int main() {
-    float x = 1;
-    int i = 1;
-
-   while ( x *= i) {
-       i++;
-       if (x<0) {
-           printf("Overflow will occur at %d\n",i);
-           break;
-       }
+    int x;
+    double y=1,z,avg=0;
+    printf("Enter a positive number: ");
+    scanf("%d", &x);
+    while (1) {
+        z= (double) x/y;
+        avg = (y+z)/2;
+        y = avg;
+        if (fabs(y - z) < 0.0001) {
+            break;
+        }
     }
-    printf("Factorial is %.1f\n",x);
+    printf("Square root of %d is %.5f\n", x, avg);
     return 0;
 }
