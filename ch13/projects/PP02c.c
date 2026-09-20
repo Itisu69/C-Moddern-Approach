@@ -9,16 +9,13 @@
 
 int read_line(char a[], int n);
 
-int main()
-{
+int main() {
     char reminders[MAX_REMIND][MSG_LEN + 3];
     char day_str[MONTH_LEN + DAY_LEN + TIME_LEN + 1], msg_str[MSG_LEN + 1];
     int day, month, i, j, num_remind = 0, hour, minutes;
 
-    for (;;)
-    {
-        if (num_remind == MAX_REMIND)
-        {
+    for (;;) {
+        if (num_remind == MAX_REMIND) {
             printf("---No space left ---\n");
             break;
         }
@@ -28,9 +25,9 @@ int main()
 
         if (day == 0 || month == 0)
             break;
-        else if (day < 0 || day > 31 || month > 12 || month < 1)
-        {
-            printf("Error: Invalid date. Month must be 1-12 and day must be 1-31.\n");
+        else if (day < 0 || day > 31 || month > 12 || month < 1) {
+            printf("Error: Invalid date. Month must be 1-12 and day must be "
+                   "1-31.\n");
             while (getchar() != '\n')
                 ; // Flush buffer
             continue;
@@ -57,12 +54,10 @@ int main()
     return 0;
 }
 
-int read_line(char str[], int n)
-{
+int read_line(char str[], int n) {
     int ch, i = 0;
 
-    while ((ch = getchar()) != '\n')
-    {
+    while ((ch = getchar()) != '\n') {
         if (i < n)
             str[i++] = ch;
     }
