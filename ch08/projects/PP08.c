@@ -1,16 +1,15 @@
 #include <stdio.h>
 
-int main(void)
-{
-    int arr[5][5] = {0}, row, col, score; 
+int main(void) {
+    int arr[5][5] = {0}, row, col, score;
     int high_score = 0, low_score = 0;
     float avg_score = 0.0f;
 
     /* Populate 5 x 5 array */
     for (row = 0; row < 5; row++) {
         printf("Enter 5 Quiz scores for Student %d :", row + 1);
-        scanf("%d %d %d %d %d", &arr[row][0], &arr[row][1], 
-                &arr[row][2], &arr[row][3], &arr[row][4]);
+        scanf("%d %d %d %d %d", &arr[row][0], &arr[row][1], &arr[row][2],
+              &arr[row][3], &arr[row][4]);
     }
 
     /* Calculate student scores*/
@@ -31,9 +30,10 @@ int main(void)
         low_score = arr[col][0];
 
         printf("\n*Stats for Quiz %d*\n", col + 1);
-        for(row = 0; row < 5; row++) {
+        for (row = 0; row < 5; row++) {
             avg_score += arr[row][col];
-            high_score = arr[row][col] > high_score ? arr[row][col] : high_score;
+            high_score =
+                arr[row][col] > high_score ? arr[row][col] : high_score;
             low_score = arr[row][col] < low_score ? arr[row][col] : low_score;
         }
         printf("Average score: %2.1f\n", avg_score / 5);
@@ -44,5 +44,3 @@ int main(void)
     return 0;
 }
 
-    
-    
