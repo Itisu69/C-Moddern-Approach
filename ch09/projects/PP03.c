@@ -31,64 +31,7 @@ int main() {
         }
     }
 
-    // generate_random_walk(grid);
-    row = 0;
-    col = 0;
-    for (letter = 'A'; letter <= 'Z'; letter++) {
-        grid[row][col] = letter;
-
-        for (i = 0; i < NUM_MOVES; pot_move[i] = false, i++) {
-            ;
-        }
-        pot_move_count = 0;
-
-        if (col - 1 >= 0 && grid[row][col - 1] == EMPTY_CELL) {
-            pot_move[LEFT] = true;
-            pot_move_count++;
-        }
-        if (row + 1 < NUM_ROWS && grid[row + 1][col] == EMPTY_CELL) {
-            pot_move[DOWN] = true;
-            pot_move_count++;
-        }
-        if (row - 1 >= 0 && grid[row - 1][col] == EMPTY_CELL) {
-            pot_move[UP] = true;
-            pot_move_count++;
-        }
-        if (col + 1 < NUM_COLS && grid[row][col + 1] == EMPTY_CELL) {
-            pot_move[RIGHT] = true;
-            pot_move_count++;
-        }
-
-        /* Break if no moves are possible from current cell */
-        if (pot_move_count == 0)
-            break;
-
-        /* Generate random moves until one matches a potential move, then
-         * perform move */
-        while (true) {
-            gen_move = rand() % NUM_MOVES;
-
-            if (pot_move[gen_move] == true) {
-                switch (gen_move) {
-                case LEFT:
-                    col--;
-                    break;
-                case DOWN:
-                    row++;
-                    break;
-                case UP:
-                    row--;
-                    break;
-                case RIGHT:
-                    col++;
-                    break;
-                }
-                break; /* generated move performed, break */
-            } else {
-                continue; /* generated move not possible, continue */
-            }
-        }
-    }
+    generate_random_walk(grid);
     print_array(grid);
 
     return 0;
