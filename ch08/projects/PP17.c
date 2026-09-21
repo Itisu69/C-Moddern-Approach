@@ -1,12 +1,22 @@
 #include <stdio.h>
 
+// Magic square : A square arrangement of the numbers 1,2,..,n^2 in which the
+// sums of the rows and columns and the diagonals are all the same
+
 int main(void) {
     int n;
 
+start:
     printf("This program creates a magic square of a specified size.\n");
     printf("The size must be an odd number between 1 and 99.\n");
     printf("Enter size of magic squares: \n");
     scanf("%d", &n);
+
+    // Checking if entered size is odd or not
+    if (n % 2 == 0) {
+        printf("Please enter an odd  size for magic square\n");
+        goto start;
+    }
     int magic_square[n][n];
 
     // Initializing matrix with zero
