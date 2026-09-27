@@ -17,3 +17,4 @@ cmake-build-release/
 !*.txt
 !*.md
 !.gitignore
+!Makefile
